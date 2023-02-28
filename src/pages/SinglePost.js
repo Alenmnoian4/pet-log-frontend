@@ -1,4 +1,5 @@
 import { Link, useLoaderData } from "react-router-dom";
+import "../styles/Stylesheet.css"
 
 // destructuring the props needed to get our post, including router prop match
 const Show = () => {
@@ -16,10 +17,13 @@ const Show = () => {
 
   return (
     <div style={div}>
-      <h1>{post.subject}</h1>
-      <h2>{post.details}</h2>
+      <h1>{post.pet}</h1>
+      <h2>{post.date}</h2>
+      <h2>{post.weight}</h2>
+      <h2>{post.appointments}</h2>
+      <h2>{post.notes}</h2>
       <Link to="/">
-        <button>Go Back</button>
+        <button className="formbutton">Go Back</button>
       </Link>
     </div>
   );

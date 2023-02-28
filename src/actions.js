@@ -16,7 +16,7 @@ export const createAction = async ({request}) => {
         appointments: formData.get("appointments"),
         notes: formData.get("notes")
     }
-
+console.log(newPetlog, "<this is the new pet>")
     // send request to backend
     await fetch(URL + "/petlogs/", {
         method: "post",

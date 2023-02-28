@@ -1,4 +1,5 @@
 import { Link, useLoaderData, Form } from "react-router-dom";
+import "../styles/Stylesheet.css"
 
 // destructuring the props needed to get our post, including router prop match
 const Show = () => {
@@ -22,15 +23,15 @@ const Show = () => {
       <h2>{post.appointments}</h2>
       <h2>{post.notes}</h2>
       <div style={{ textAlign: "center" }}>
-        <h2>Create a Petlog</h2>
+        <h2 className="createlog">Create a Petlog</h2>
         <Form action={`/update/${post.id}`} method="post">
-          <input
+          <input className="inputstyle"
             type="text"
             name="pet"
             placeholder="write pets name here"
             defaultValue={post.pet}
           />
-          <input
+          <input className="inputstyle"
             type="text"
             name="date"
             placeholder="write date here"
@@ -54,14 +55,14 @@ const Show = () => {
             placeholder="write any notes here"
             defaultValue={post.notes}
           />
-          <button>Update Petlog</button>
+          <button className="formbutton">Update Petlog</button>
         </Form>
         <Form action={`/delete/${post.id}`} method="post">
-          <button>Delete Petlog</button>
+          <button className="formbutton">Delete Petlog</button>
         </Form>
       </div>
       <Link to="/">
-        <button>Go Back</button>
+        <button className="formbutton">Go Back</button>
       </Link>
     </div>
   );
